@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { cli, leaf, option, branch } from '@carnesen/cli';
 import { isAbsolute } from 'path';
 import { RegtestService } from '@carnesen/bitcoin-regtest-service';
