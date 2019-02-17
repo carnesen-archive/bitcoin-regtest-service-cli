@@ -1,0 +1,61 @@
+{
+  "name": "@carnesen/bitcoin-regtest-service-cli",
+  "description": "A Node.js command-line interface for managing a regtest-mode bitcoin service",
+  "version": "0.0.0",
+  "private": true,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "regtest-service": "lib/index.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "build:clean": "rimraf lib && npm run build",
+    "lint": "tslint --project tsconfig.build.json",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint && npm run test:unit && npm run build",
+    "test:unit": "jest --coverage src",
+    "test:watch": "npm run test:unit -- --watch",
+    "preversion": "npm test && npm run build:clean",
+    "postversion": "npm publish"
+  },
+  "dependencies": {
+    "@carnesen/bitcoin-regtest-service": "0.0.0",
+    "@carnesen/cli": "0.3.3"
+  },
+  "devDependencies": {
+    "@carnesen/tsconfig": "0.1.0",
+    "@carnesen/tslint-config": "0.1.2",
+    "@types/jest": "24.0.5",
+    "@types/node": "11",
+    "jest": "24.1.0",
+    "rimraf": "2.6.3",
+    "ts-jest": "23.10.5",
+    "ts-node": "8.0.2",
+    "tslint": "5.12.1",
+    "typescript": "3.3.3"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "keywords": [
+    "bitcoin",
+    "typescript",
+    "regtest",
+    "bitcoind"
+  ],
+  "author": {
+    "name": "Chris Arnesen",
+    "email": "chris.arnesen@gmail.com"
+  },
+  "repository": "carnesen/bitcoin-regtest-service-cli",
+  "bugs": {
+    "url": "https://github.com/carnesen/bitcoin-regtest-service-cli/issues"
+  },
+  "homepage": "https://github.com/carnesen/bitcoin-regtest-service-cli#readme",
+  "license": "MIT"
+}
