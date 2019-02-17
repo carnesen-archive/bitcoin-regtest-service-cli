@@ -1,8 +1,7 @@
 {
   "name": "@carnesen/bitcoin-regtest-service-cli",
   "description": "A Node.js command-line interface for managing a regtest-mode bitcoin service",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.0-0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
@@ -20,7 +19,7 @@
     "test:unit": "jest --coverage src",
     "test:watch": "npm run test:unit -- --watch",
     "preversion": "npm test && npm run build:clean",
-    "postversion": "npm publish"
+    "postversion": "npm publish --access public"
   },
   "dependencies": {
     "@carnesen/bitcoin-regtest-service": "0.0.0",
